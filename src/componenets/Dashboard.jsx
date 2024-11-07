@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import { Container, Title } from "../styled-components/styled-dashboard";
+import { PokemonContext } from "../context/PokemonContext";
 
-const Dashboard = ({ dashboardCards, setDashboardCards }) => {
+const Dashboard = () => {
+  const { dashboardCards, setDashboardCards } = useContext(PokemonContext);
+
   const defaultImg =
     "https://react-6-pokemon.vercel.app/assets/pokeball-13iwdk7Y.png";
   // 길이가 6개인 새로운 배열을 만든 다음에, 6번 map을 돌린다.

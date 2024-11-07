@@ -2,8 +2,12 @@
 import { useNavigate } from "react-router-dom";
 import MOCK_DATA from "../MOCK_DATA";
 import { CardList } from "../styled-components/styled-pokemonList";
+import { useContext } from "react";
+import { PokemonContext } from "../context/PokemonContext";
 
-const PokemonList = ({ dashboardCards, setDashboardCards }) => {
+const PokemonList = () => {
+  const { dashboardCards, setDashboardCards } = useContext(PokemonContext);
+
   const addPokemonToDashboardHandler = (selectedCard) => {
     const existingPokemon = dashboardCards.some(
       (dashboardCard) => dashboardCard.id === selectedCard.id

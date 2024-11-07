@@ -1,6 +1,7 @@
 // import { Link } from "react-router-dom";
 // import { MOCK_DATA } from "../MOCK_DATA"
 import { useEffect, useState } from "react";
+import { PokemonContext } from "../context/PokemonContext";
 import Dashboard from "../componenets/Dashboard";
 import PokemonList from "../componenets/PokemonList";
 
@@ -21,18 +22,13 @@ const Dex = () => {
     localStorage.setItem("dashboardCards", JSON.stringify(dashboardCards));
   }, [dashboardCards]);
 
+  
   return (
     <>
-      <div>
-        <Dashboard
-          dashboardCards={dashboardCards}
-          setDashboardCards={setDashboardCards}
-        />
-        <PokemonList
-          dashboardCards={dashboardCards}
-          setDashboardCards={setDashboardCards}
-        />
-      </div>
+      <PokemonContext.Provider value={{ dashboardCards, setDashboardCards }} >
+          <Dashboard />
+          <PokemonList />
+      </PokemonContext.Provider>
     </>
   );
 };
