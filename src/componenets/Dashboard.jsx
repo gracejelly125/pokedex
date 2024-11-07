@@ -1,9 +1,13 @@
-import { useContext } from "react";
+// import { useContext } from "react";
 import { Container, Title } from "../styled-components/styled-dashboard";
-import { PokemonContext } from "../context/PokemonContext";
+// import { PokemonContext } from "../context/PokemonContext";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteCard } from "../redux/slices/listSlice";
 
 const Dashboard = () => {
-  const { dashboardCards, setDashboardCards } = useContext(PokemonContext);
+  // const { dashboardCards, setDashboardCards } = useContext(PokemonContext);
+  const dashboardCards = useSelector((state) => state.list)
+  const dispatch = useDispatch();
 
   const defaultImg =
     "https://react-6-pokemon.vercel.app/assets/pokeball-13iwdk7Y.png";
@@ -13,10 +17,11 @@ const Dashboard = () => {
   // 해당 인덱스를 대시보드 카드에서 찾아서 데이터가 들어있나 확인한다.
   // 있으면 카드, 없으면 몬스터 볼을 보여준다.
   const deletePokemonHandler = (cardToDelete) => {
-    const deletedDashboardCards = dashboardCards.filter(
-      (dashboardCard) => dashboardCard.id !== cardToDelete.id
-    );
-    setDashboardCards(deletedDashboardCards);
+    // const deletedDashboardCards = dashboardCards.filter(
+    //   (dashboardCard) => dashboardCard.id !== cardToDelete.id
+    // );
+    // setDashboardCards(deletedDashboardCards);
+    dispatch(deleteCard(cardToDelete));
   };
 
   return (
