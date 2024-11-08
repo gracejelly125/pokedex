@@ -13,31 +13,18 @@ import { BigButton } from "../styled-components/Button";
 
 const PokemonCard = () => {
   const dispatch = useDispatch();
-  const dashboardCards = useSelector((state) => state.list);
-  // useParams는 URL 경로에서 동적 파라미터를 가져오는데 사용한다.
-  // 동적으로 설정된 파라미터를 객체 형태로 반환한다.
   const params = useParams();
-  // params 동적 파라미터를 가져오는 객체
-  // console.log(params);
-
-  // params.id는 문자열로 반환되기 때문에 숫자로 변환해준다.
+  const dashboardCards = useSelector((state) => state.list);
   const targetPokemon = MOCK_DATA.find((data) => data.id === Number(params.id));
-
   const navigate = useNavigate();
-
   const goBack = () => {
-    // -1은 이전 페이지로 이동하라는 의미이다.
     navigate(-1);
   };
 
-  // 대시보드에 해당 포케몬이 있으면 삭제하기, 없으면 추가하기 버튼 출력
   const existingPokemon = dashboardCards.some(
     (dashboardCard) => dashboardCard.id === targetPokemon.id
   );
 
-  // 재사용이 필요한지 아닌지 구분하는 기준이
-  // 한 곳에서 변경이 일어났을 때 같이 변경이 되냐
-  
   const pokemonCardButtonClickHandler = () => {
     if (existingPokemon) {
       dispatch(deleteCard(targetPokemon));

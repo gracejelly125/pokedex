@@ -24,14 +24,12 @@ export const BigButton = styled(BaseButton)`
 `;
 
 export const MusicButton = styled.button`
-  button {
-    background-color: transparent;
-    border: none;
-    font-size: 20px;
-    padding: 10px;
-  }
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  padding: 10px;
 
-  button:hover {
+  &:hover {
     cursor: pointer;
     transform: scale(1.2);
   }

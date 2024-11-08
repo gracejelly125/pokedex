@@ -4,9 +4,7 @@ import { useDispatch } from "react-redux";
 import { playMusic } from "../redux/slices/musicSlice";
 import { BigButton } from "../styled-components/Button";
 
-
 const Home = () => {
-  // navigate 링크가 열시면 홈 메인 페이지가 보이게 해준다.
   const navigate = useNavigate();
   const dispatch = useDispatch();
 

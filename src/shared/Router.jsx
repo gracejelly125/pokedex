@@ -5,8 +5,6 @@ import PokemonDetail from "../pages/PokemonDetail";
 import { useSelector } from "react-redux";
 import { useEffect, useRef } from "react";
 
-// import Layout from './Layout';
-
 const Router = () => {
   const isPlaying = useSelector((state) => state.music.isPlaying);
   const audioRef = useRef(null);

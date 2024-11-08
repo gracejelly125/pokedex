@@ -29,21 +29,7 @@ export const CardList = styled.ul`
     transform: scale(1.05);
   }
 
-  /* button {
-    margin-top: 10px;
-    padding: 5px 10px;
-    background-color: skyblue;
-    border: none;
-    border-radius: 8px;
-    font-size: 14px;
-  }
-
-  button:hover {
-    cursor: pointer;
-    background-color: greenyellow;
-  } */
-
   p {
     margin: 5px auto 5px auto;
   }
-`
+`;

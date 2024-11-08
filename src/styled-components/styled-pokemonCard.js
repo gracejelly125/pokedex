@@ -17,21 +17,21 @@ export const CardStyle = styled.div`
 `;
 
 export const Name = styled.p`
-    font-size: 25px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: midnightblue;
-`
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: midnightblue;
+`;
 
 export const Type = styled.p`
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: darkred;
-`
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: darkred;
+`;
 
 export const Des = styled.p`
-    text-align: center;
-    width: 1200px;
-    font-size: 16px;
-`
+  text-align: center;
+  width: 1200px;
+  font-size: 16px;
+`;
