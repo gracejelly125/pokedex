@@ -3,10 +3,10 @@ import MOCK_DATA from "../MOCK_DATA";
 import { CardList } from "../styled-components/styled-pokemonList";
 // import { useContext } from "react";
 // import { PokemonContext } from "../context/PokemonContext";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addCard } from "../redux/slices/listSlice";
+import { toast } from "react-toastify";
+
 
 const PokemonList = () => {
   // const { dashboardCards, setDashboardCards } = useContext(PokemonContext);
@@ -51,7 +51,7 @@ const PokemonList = () => {
             <li key={data.id} onClick={() => goToDetailHandler(data)}>
               <img src={`${data.img_url}`} />
               <p>{data.korean_name}</p>
-              <p>{String(data.id).padStart(3, "0")}</p>
+              <p>No. {String(data.id).padStart(3, "0")}</p>
               <button
                 type="button"
                 onClick={(e) => buttonClickHandler(e, data)}
@@ -62,7 +62,6 @@ const PokemonList = () => {
           );
         })}
       </CardList>
-      <ToastContainer />
     </>
   );
 };

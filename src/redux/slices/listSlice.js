@@ -26,5 +26,7 @@ const listSlice = createSlice({
 export const { addCard, deleteCard } = listSlice.actions;
 export default listSlice.reducer;
 
-// 리듀서는 변화를 일으키는 함수이다. 변화의 종류는 action.type에 달려있다.
+// 리듀서는 변화를 일으키는 함수이다. 
+// 리듀서는 useState 대신 전역 상태 관리를 해준다.
+// 변화의 종류는 action.type에 달려있다.
 // action은 type을 갖고 있는 객체이다.

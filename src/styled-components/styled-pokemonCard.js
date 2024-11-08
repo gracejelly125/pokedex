@@ -16,7 +16,7 @@ export const CardStyle = styled.div`
   }
 
   button {
-    margin-top: 20px;
+    margin: 20px 5px;
     padding: 5px 10px;
     background-color: skyblue;
     border: none;
