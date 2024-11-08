@@ -1,15 +1,17 @@
 // import { useContext } from "react";
-import { Container, Title } from "../styled-components/styled-dashboard";
+import { Container, Header } from "../styled-components/styled-dashboard";
 // import { PokemonContext } from "../context/PokemonContext";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteCard } from "../redux/slices/listSlice";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-
+import { playMusic, stopMusic } from "../redux/slices/musicSlice";
+import { MusicButton, SmallButton } from "../styled-components/Button";
 
 const Dashboard = () => {
   // const { dashboardCards, setDashboardCards } = useContext(PokemonContext);
-  const dashboardCards = useSelector((state) => state.list)
+  const dashboardCards = useSelector((state) => state.list);
+  const isPlaying = useSelector((state) => state.music.isPlaying);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -26,7 +28,7 @@ const Dashboard = () => {
     // );
     // setDashboardCards(deletedDashboardCards);
     dispatch(deleteCard(cardToDelete));
-    toast.success(`${cardToDelete.korean_name} 포켓몬이 삭제되었습니다.`)
+    toast.success(`${cardToDelete.korean_name} 포켓몬이 삭제되었습니다.`);
   };
 
   const goToDetailHandler = (card) => {
@@ -39,11 +41,22 @@ const Dashboard = () => {
     deletePokemonHandler(card);
   };
 
+  const toggleMusicHandler = () => {
+    if (isPlaying) {
+      dispatch(stopMusic());
+    } else {
+      dispatch(playMusic());
+    }
+  };
+
   return (
     <>
-      <div>
-        <Title>My Pokedex</Title>
-      </div>
+      <Header>
+        <h1>My Pokedex</h1>
+        <MusicButton type="button" onClick={toggleMusicHandler}>
+          {isPlaying ? "⏹" : "🎵"}
+        </MusicButton>
+      </Header>
       <Container>
         {Array.from({ length: 6 }).map((_, index) => {
           const card = dashboardCards[index];
@@ -53,13 +66,13 @@ const Dashboard = () => {
                 <>
                   <img src={card.img_url} />
                   <p>{card.korean_name}</p>
-                  <p>{String(card.id).padStart(3, '0')}</p>
-                  <button
+                  <p>No.{String(card.id).padStart(3, "0")}</p>
+                  <SmallButton $primary={false}
                     type="button"
                     onClick={(e) => buttonClickHandler(e, card)}
                   >
                     삭제
-                  </button>
+                  </SmallButton>
                 </>
               ) : (
                 <img src={defaultImg} />

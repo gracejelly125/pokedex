@@ -12,7 +12,7 @@ import musicSlice from "../slices/musicSlice";
 
 // // 1. rootReducer를 만든다. {} 객체가 인풋으로 들어간다.
 // // 2. store 를 조합한다. (더이상 유지보수되지 않음)
-// // 3. 만든 store를 내보낸다. 
+// // 3. 만든 store를 내보낸다.
 // // => main.jsx 로 이동! App 컴포넌트를 Provider로 감싸준다.
 // //     <Provider store={store}>
 // //      <App />
@@ -25,12 +25,11 @@ import musicSlice from "../slices/musicSlice";
 
 // const store = createStore(rootReducer);
 
-
 const store = configureStore({
-    reducer: {
-        list: listSlice,
-        music: musicSlice,
-    }
-})
+  reducer: {
+    list: listSlice,
+    music: musicSlice,
+  },
+});
 
 export default store;

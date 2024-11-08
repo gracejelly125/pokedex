@@ -20,8 +20,8 @@ const Dex = () => {
   return (
     <>
       {/* <PokemonContext.Provider value={{ dashboardCards, setDashboardCards }}> */}
-        <Dashboard />
-        <PokemonList />
+      <Dashboard />
+      <PokemonList />
       {/* </PokemonContext.Provider> */}
     </>
   );

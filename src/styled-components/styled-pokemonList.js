@@ -29,7 +29,7 @@ export const CardList = styled.ul`
     transform: scale(1.05);
   }
 
-  button {
+  /* button {
     margin-top: 10px;
     padding: 5px 10px;
     background-color: skyblue;
@@ -41,7 +41,7 @@ export const CardList = styled.ul`
   button:hover {
     cursor: pointer;
     background-color: greenyellow;
-  }
+  } */
 
   p {
     margin: 5px auto 5px auto;

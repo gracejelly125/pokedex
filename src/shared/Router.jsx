@@ -8,11 +8,11 @@ import { useEffect, useRef } from "react";
 // import Layout from './Layout';
 
 const Router = () => {
-  const isPlaying = useSelector((state) => state.music.isPlaying)
+  const isPlaying = useSelector((state) => state.music.isPlaying);
   const audioRef = useRef(null);
 
   useEffect(() => {
-    if(isPlaying && audioRef.current) {
+    if (isPlaying && audioRef.current) {
       audioRef.current.play();
     } else if (!isPlaying && audioRef.current) {
       audioRef.current.pause();
@@ -22,14 +22,14 @@ const Router = () => {
   return (
     <BrowserRouter>
       <div>
-        <audio ref={audioRef} loop >
+        <audio ref={audioRef} loop>
           <source src="/music/background-music.mp3" type="audio/mp3" />
         </audio>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="dex" element={<Dex />} />
-        <Route path="dex/:id" element={<PokemonDetail />} />
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="dex" element={<Dex />} />
+          <Route path="dex/:id" element={<PokemonDetail />} />
+        </Routes>
       </div>
     </BrowserRouter>
   );

@@ -1,11 +1,13 @@
 import styled from "styled-components";
 
-export const Title = styled.h1`
-  text-align: center;
-  font-size: 30px;
-  font-weight: bold;
-  color: midnightblue;
-  padding: 20px;
+export const Header = styled.div`
+  h1 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: midnightblue;
+    padding: 20px;
+  }
 `;
 
 export const Container = styled.ul`
@@ -46,19 +48,5 @@ export const Container = styled.ul`
     width: 100px;
     height: 100px;
     margin: auto;
-  }
-
-  button {
-    margin-top: 10px;
-    padding: 5px 10px;
-    background-color: skyblue;
-    border: none;
-    border-radius: 8px;
-    font-size: 14px;
-  }
-
-  button:hover {
-    cursor: pointer;
-    background-color: greenyellow;
   }
 `;

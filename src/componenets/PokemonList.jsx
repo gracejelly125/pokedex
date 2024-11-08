@@ -6,7 +6,7 @@ import { CardList } from "../styled-components/styled-pokemonList";
 import { useDispatch, useSelector } from "react-redux";
 import { addCard } from "../redux/slices/listSlice";
 import { toast } from "react-toastify";
-
+import { SmallButton } from "../styled-components/Button";
 
 const PokemonList = () => {
   // const { dashboardCards, setDashboardCards } = useContext(PokemonContext);
@@ -35,7 +35,7 @@ const PokemonList = () => {
     //   selectedCard,
     // ]);
     dispatch(addCard(selectedCard));
-    toast.success(`${selectedCard.korean_name} 포켓몬이 추가되었습니다.`)
+    toast.success(`${selectedCard.korean_name} 포켓몬이 추가되었습니다.`);
   };
 
   const buttonClickHandler = (e, data) => {
@@ -52,13 +52,13 @@ const PokemonList = () => {
             <li key={data.id} onClick={() => goToDetailHandler(data)}>
               <img src={`${data.img_url}`} />
               <p>{data.korean_name}</p>
-              <p>No. {String(data.id).padStart(3, "0")}</p>
-              <button
+              <p>No.{String(data.id).padStart(3, "0")}</p>
+              <SmallButton $primary
                 type="button"
                 onClick={(e) => buttonClickHandler(e, data)}
               >
                 추가
-              </button>
+              </SmallButton>
             </li>
           );
         })}

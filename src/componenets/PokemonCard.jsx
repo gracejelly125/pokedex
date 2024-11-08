@@ -9,6 +9,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { addCard, deleteCard } from "../redux/slices/listSlice";
 import { toast } from "react-toastify";
+import { BigButton } from "../styled-components/Button";
 
 const PokemonCard = () => {
   const dispatch = useDispatch();
@@ -34,6 +35,9 @@ const PokemonCard = () => {
     (dashboardCard) => dashboardCard.id === targetPokemon.id
   );
 
+  // 재사용이 필요한지 아닌지 구분하는 기준이
+  // 한 곳에서 변경이 일어났을 때 같이 변경이 되냐
+  
   const pokemonCardButtonClickHandler = () => {
     if (existingPokemon) {
       dispatch(deleteCard(targetPokemon));
@@ -42,10 +46,9 @@ const PokemonCard = () => {
       toast.error("이미 6장의 카드를 추가했습니다. 카드 중 하나를 삭제하세요.");
       return;
     } else {
-    dispatch(addCard(targetPokemon));
-    toast.success(`${targetPokemon.korean_name} 포켓몬이 추가되었습니다.`)
+      dispatch(addCard(targetPokemon));
+      toast.success(`${targetPokemon.korean_name} 포켓몬이 추가되었습니다.`);
     }
-
   };
 
   return (
@@ -56,12 +59,12 @@ const PokemonCard = () => {
         <Type>타입 : {targetPokemon.types.join(", ")}</Type>
         <Des>{targetPokemon.description}</Des>
         <div>
-          <button type="button" onClick={goBack}>
+          <BigButton type="button" onClick={goBack}>
             뒤로가기
-          </button>
-          <button type="button" onClick={pokemonCardButtonClickHandler}>
-            {existingPokemon ? "삭제하기" : "추가하기"}
-          </button>
+          </BigButton>
+          <BigButton type="button" onClick={pokemonCardButtonClickHandler}>
+            {existingPokemon ? "삭제" : "추가"}
+          </BigButton>
         </div>
       </CardStyle>
     </>

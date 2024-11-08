@@ -2,7 +2,6 @@
 
 // import { useSelector } from "react-redux";
 import Router from "./shared/Router";
-import GlobalStyle from "./styled-components/GlobalStyle";
 
 const App = () => {
   // const listReducer = useSelector((state) => {
@@ -12,7 +11,6 @@ const App = () => {
 
   return (
     <>
-    <GlobalStyle />
     <Router />
     </>
   );

@@ -14,20 +14,6 @@ export const CardStyle = styled.div`
     width: 150px;
     height: auto;
   }
-
-  button {
-    margin: 20px 5px;
-    padding: 5px 10px;
-    background-color: skyblue;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-  }
-
-  button:hover {
-    cursor: pointer;
-    background-color: greenyellow;
-  }
 `;
 
 export const Name = styled.p`
