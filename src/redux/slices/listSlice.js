@@ -14,7 +14,7 @@ const listSlice = createSlice({
     addCard: (state, action) => {
       // state에 직접 추가한다.
       // immer 라는 라이브러리가 내장돼있어서, 불변성이 유지된다.
-      state = state.push(action.payload);
+      state.push(action.payload);
     },
     // 주어진 id와 다른 카드만 남긴다.
     deleteCard: (state, action) => {

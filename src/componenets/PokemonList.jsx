@@ -35,6 +35,7 @@ const PokemonList = () => {
     //   selectedCard,
     // ]);
     dispatch(addCard(selectedCard));
+    toast.success(`${selectedCard.korean_name} 포켓몬이 추가되었습니다.`)
   };
 
   const buttonClickHandler = (e, data) => {

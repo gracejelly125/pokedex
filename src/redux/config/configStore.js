@@ -5,6 +5,7 @@
 
 import { configureStore } from "@reduxjs/toolkit";
 import listSlice from "../slices/listSlice";
+import musicSlice from "../slices/musicSlice";
 
 // import { combineReducers, createStore } from "redux";
 // import list from "../modules/list";
@@ -28,6 +29,7 @@ import listSlice from "../slices/listSlice";
 const store = configureStore({
     reducer: {
         list: listSlice,
+        music: musicSlice,
     }
 })
 
