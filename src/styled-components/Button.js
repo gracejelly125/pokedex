@@ -1,32 +1,35 @@
 import styled from "styled-components";
 
 const BaseButton = styled.button`
+  font-family: "Jua", sans-serif;
+  font-weight: 400;
+  font-style: normal;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
+  border: 1px solid black;
+  background-color: #8c936e;
   font-size: 14px;
   &:hover {
     cursor: pointer;
-    background-color: greenyellow;
+    transform: scale(1.05);
   }
 `;
 
 export const SmallButton = styled(BaseButton)`
   margin-top: 10px;
   padding: 5px 10px;
-  background-color: ${(props) => (props.$primary ? "#7A5CFF" : "#FF5E00")};
 `;
 
 export const BigButton = styled(BaseButton)`
-  margin: 20px 5px;
-  padding: 8px 16px;
-  background-color: #ff69b4;
+  margin: 0 5px;
+  padding: 6px 16px;
   font-size: 16px;
 `;
 
 export const MusicButton = styled.button`
   background-color: transparent;
   border: none;
-  font-size: 20px;
+  font-size: 30px;
   padding: 10px;
 
   &:hover {

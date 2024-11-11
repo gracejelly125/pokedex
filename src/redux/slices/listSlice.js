@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+// 데이터 불러오기
 const initialState = JSON.parse(localStorage.getItem("dashboardCards")) || [];
 
 const listSlice = createSlice({

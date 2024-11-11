@@ -5,13 +5,12 @@ export const Header = styled.div`
     text-align: center;
     font-size: 30px;
     font-weight: bold;
-    color: midnightblue;
+    color: black;
     padding: 20px;
   }
 `;
 
-export const Container = styled.ul`
-  background-color: skyblue;
+export const CardList = styled.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -20,10 +19,9 @@ export const Container = styled.ul`
   border-radius: 10px;
   width: 100%;
   gap: 30px;
-  margin-bottom: 30px;
+  background-color: #8c936e;
 
   li {
-    background-color: wheat;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -33,6 +31,8 @@ export const Container = styled.ul`
     padding: 20px;
     border-radius: 8px;
     text-align: center;
+    background-color: #DDD6B8;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
   }
 
   li:hover {
@@ -43,7 +43,12 @@ export const Container = styled.ul`
   p {
     margin: 5px auto 5px auto;
   }
+`;
 
+
+export const Container = styled(CardList)`
+  margin-bottom: 30px;
+  
   img {
     width: 100px;
     height: 100px;

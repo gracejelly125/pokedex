@@ -11,9 +11,11 @@ const GlobalStyle = createGlobalStyle`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: 'Noto Sans KR', Arial, sans-serif;
+    font-family: "Jua", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     margin: auto;
-    background-color: pink;
+    background-color: #c4cc9d;
     }
 `;
 

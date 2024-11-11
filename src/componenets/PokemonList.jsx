@@ -1,16 +1,17 @@
 import { useNavigate } from "react-router-dom";
 import MOCK_DATA from "../MOCK_DATA";
-import { CardList } from "../styled-components/styled-pokemonList";
 import { useDispatch, useSelector } from "react-redux";
 import { addCard } from "../redux/slices/listSlice";
 import { toast } from "react-toastify";
 import { SmallButton } from "../styled-components/Button";
+import { CardList } from "../styled-components/styled-CardList";
 
 const PokemonList = () => {
   const dashboardCards = useSelector((state) => state.list);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   
+  // 상세정보 페이지로 이동
   const goToDetailHandler = (data) => {
     navigate(`/dex/${data.id}`);
   };
@@ -31,6 +32,7 @@ const PokemonList = () => {
     toast.success(`${selectedCard.korean_name} 포켓몬이 추가되었습니다.`);
   };
 
+  // 상위 요소 이벤트 전파 방지
   const buttonClickHandler = (e, data) => {
     e.stopPropagation();
     addPokemonToDashboardHandler(data);
@@ -46,7 +48,6 @@ const PokemonList = () => {
               <p>{data.korean_name}</p>
               <p>No.{String(data.id).padStart(3, "0")}</p>
               <SmallButton
-                $primary
                 type="button"
                 onClick={(e) => buttonClickHandler(e, data)}
               >
