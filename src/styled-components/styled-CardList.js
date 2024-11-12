@@ -29,15 +29,17 @@ export const CardList = styled.ul`
     width: auto;
     height: auto;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 6px;
+    outline: 6px solid silver;
+    overflow: hidden;
     text-align: center;
-    background-color: #DDD6B8;
+    background-color: #ddd6b8;
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
-  }
 
-  li:hover {
-    cursor: pointer;
-    transform: scale(1.05);
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+    }
   }
 
   p {
@@ -45,10 +47,9 @@ export const CardList = styled.ul`
   }
 `;
 
-
 export const Container = styled(CardList)`
   margin-bottom: 30px;
-  
+
   img {
     width: 100px;
     height: 100px;

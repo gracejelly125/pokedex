@@ -10,7 +10,7 @@ const PokemonList = () => {
   const dashboardCards = useSelector((state) => state.list);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  
+
   // 상세정보 페이지로 이동
   const goToDetailHandler = (data) => {
     navigate(`/dex/${data.id}`);

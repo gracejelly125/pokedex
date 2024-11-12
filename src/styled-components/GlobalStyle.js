@@ -11,8 +11,8 @@ const GlobalStyle = createGlobalStyle`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: "Jua", sans-serif;
-    font-weight: 400;
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: bold;
     font-style: normal;
     margin: auto;
     background-color: #c4cc9d;

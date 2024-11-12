@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 const BaseButton = styled.button`
-  font-family: "Jua", sans-serif;
-  font-weight: 400;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: bold;
   font-style: normal;
   border: none;
   border-radius: 6px;

@@ -13,7 +13,7 @@ export const MainLogo = styled.div`
 
 export const DetailStyle = styled(MainLogo)`
   img {
-    width: 150px;
+    width: 200px;
     height: auto;
   }
 `;
@@ -35,5 +35,5 @@ export const Des = styled.p`
   text-align: center;
   width: 1200px;
   font-size: 18px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 `;
