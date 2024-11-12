@@ -11,7 +11,7 @@ const BaseButton = styled.button`
   font-size: 14px;
   &:hover {
     cursor: pointer;
-    transform: scale(1.05);
+    background-color: #9bae7b;
   }
 `;
 
@@ -34,6 +34,6 @@ export const MusicButton = styled.button`
 
   &:hover {
     cursor: pointer;
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
 `;
