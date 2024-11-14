@@ -5,7 +5,7 @@
 - React-router-dom 을 이용해 SPA 를 구현한다.
 - React에서 props drilling과 Context API를 적용하여 데이터 흐름을 이해할 수 있다.
 ----
-## 필수 기능
+## 기능
 ### 1. **Git 브랜치 전략 사용하기**
 - 상태 관리 방식을 단계별로 나눠 구현하는 Git 브랜치 전략을 사용한다.
 - props-drilling, context, redux toolit 각 브랜치를 만들어 각각의 전역 상태 관리의 구현한다.
