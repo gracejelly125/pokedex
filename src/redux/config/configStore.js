@@ -1,11 +1,16 @@
 import { configureStore } from "@reduxjs/toolkit";
-import listSlice from "../slices/listSlice";
-import musicSlice from "../slices/musicSlice";
+import listReducer from "../slices/listSlice";
+import musicReducer from "../slices/musicSlice";
+
+// 피드백!
+// listSlice 라고 값을 주면, 슬라이스 객체 전체를 말하기 때문에,
+// reducer만 참조하기 때문에, listReducer 로 명명하는 것이 좋다.
+// 코드 가독성을 위해 명확하게 역할을 표현해야 된다.
 
 const store = configureStore({
   reducer: {
-    list: listSlice,
-    music: musicSlice,
+    list: listReducer,
+    music: musicReducer,
   },
 });
 
