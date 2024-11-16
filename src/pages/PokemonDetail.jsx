@@ -1,9 +1,9 @@
 import PokemonCard from "../componenets/PokemonCard";
 
-const PokemonDetail = () => {
+const PokemonDetail = ({ dashboardCards }) => {
   return (
     <>
-      <PokemonCard />
+      <PokemonCard dashboardCards={dashboardCards} />
     </>
   );
 };

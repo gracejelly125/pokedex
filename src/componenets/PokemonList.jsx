@@ -1,13 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import MOCK_DATA from "../MOCK_DATA";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addCard } from "../redux/slices/listSlice";
 import { toast } from "react-toastify";
 import { SmallButton } from "../styled-components/Button";
 import { CardList } from "../styled-components/styled-CardList";
 
-const PokemonList = () => {
-  const dashboardCards = useSelector((state) => state.list);
+const PokemonList = ({ dashboardCards }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 

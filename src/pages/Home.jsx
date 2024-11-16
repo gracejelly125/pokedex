@@ -20,9 +20,7 @@ const Home = () => {
 
   return (
     <MainLogo>
-      <img
-        src="/images/1.jpg"
-      />
+      <img src="/images/1.jpg" />
       <BigButton onClick={handleStart}>포켓몬 도감 시작하기</BigButton>
     </MainLogo>
   );

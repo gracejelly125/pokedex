@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom";
 import MOCK_DATA from "../MOCK_DATA";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addCard, deleteCard } from "../redux/slices/listSlice";
 import { toast } from "react-toastify";
 import { BigButton } from "../styled-components/Button";
@@ -11,12 +11,11 @@ import {
   Type,
 } from "../styled-components/styled-Detail";
 
-const PokemonCard = () => {
+const PokemonCard = ({ dashboardCards }) => {
   const dispatch = useDispatch();
   const params = useParams();
-  const dashboardCards = useSelector((state) => state.list);
 
-  // params.id를 비교해서 화면에 그릴 해당 포켓몬을 불러온다. 
+  // params.id를 비교해서 화면에 그릴 해당 포켓몬을 불러온다.
   const targetPokemon = MOCK_DATA.find((data) => data.id === Number(params.id));
   const navigate = useNavigate();
   const goBack = () => {
