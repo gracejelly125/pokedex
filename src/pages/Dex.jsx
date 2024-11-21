@@ -1,10 +1,13 @@
+import { useSelector } from "react-redux";
 import Dashboard from "../componenets/Dashboard";
 import PokemonList from "../componenets/PokemonList";
 
-const Dex = ({ dashboardCards, isPlaying }) => {
+const Dex = () => {
+  const dashboardCards = useSelector((rootState) => rootState.list);
+
   return (
     <>
-      <Dashboard dashboardCards={dashboardCards} isPlaying={isPlaying} />
+      <Dashboard dashboardCards={dashboardCards} />
       <PokemonList dashboardCards={dashboardCards} />
     </>
   );
