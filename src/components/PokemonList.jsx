@@ -1,12 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import MOCK_DATA from "../MOCK_DATA";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addCard } from "../redux/slices/listSlice";
 import { toast } from "react-toastify";
-import { SmallButton } from "../styled-components/Button";
 import { CardList } from "../styled-components/styled-CardList";
+import PokemonCard from "./PokemonCard";
 
-const PokemonList = ({ dashboardCards }) => {
+const PokemonList = () => {
+  const dashboardCards = useSelector(state => state.list);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -42,17 +43,12 @@ const PokemonList = ({ dashboardCards }) => {
       <CardList>
         {MOCK_DATA.map((data) => {
           return (
-            <li key={data.id} onClick={() => goToDetailHandler(data)}>
-              <img src={`${data.img_url}`} />
-              <p>{data.korean_name}</p>
-              <p>No.{String(data.id).padStart(3, "0")}</p>
-              <SmallButton
-                type="button"
-                onClick={(e) => buttonClickHandler(e, data)}
-              >
-                추가
-              </SmallButton>
-            </li>
+            <PokemonCard
+              key={data.id}
+              data={data}
+              goToDetailHandler={goToDetailHandler}
+              buttonClickHandler={buttonClickHandler}
+            />
           );
         })}
       </CardList>

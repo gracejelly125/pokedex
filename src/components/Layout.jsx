@@ -15,10 +15,12 @@ const Layout = () => {
   }, [isPlaying]);
 
   return (
-    <audio ref={audioRef} loop>
-      <source src="/music/background-music.mp3" type="audio/mp3" />
-      <Outlet isPlaying={isPlaying}/>
-    </audio>
+    <>
+      <audio ref={audioRef} loop>
+        <source src="/music/background-music.mp3" type="audio/mp3" />
+      </audio>
+      <Outlet />
+    </>
   );
 };
 

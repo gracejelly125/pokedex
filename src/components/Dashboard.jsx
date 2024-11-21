@@ -1,5 +1,5 @@
 import { Container, Header } from "../styled-components/styled-CardList";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { deleteCard } from "../redux/slices/listSlice";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -8,7 +8,9 @@ import { MusicButton, SmallButton } from "../styled-components/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlay, faCircleStop } from "@fortawesome/free-solid-svg-icons";
 
-const Dashboard = ({ dashboardCards, isPlaying }) => {
+const Dashboard = () => {
+  const dashboardCards = useSelector(state => state.list)
+  const isPlaying = useSelector(state => state.music.isPlaying)
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const defaultImg =
